@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace CRLF</title>
+</head>
+<body>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Input text here..."></textarea>
+    <br>
+    <button onclick="replaceNewlines()">Replace CRLF</button>
+    <script>
+        function replaceNewlines() 
+		{
+            let textArea = document.getElementById("inputText");
+            let text = textArea.value;
+            text = text.replace
+			(/\.?\n/g, (match) => 
+				{
+					return match.startsWith('.') ? '.\n\n' : ' ';
+				}
+			);
+            textArea.value = text;
+        }
+    </script>
+</body>
+</html>
